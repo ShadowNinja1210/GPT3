@@ -32,6 +32,7 @@
   width: 100%;
   margin: 2rem 0 1rem;
   display: flex;
+  position: relative;
 }
 
 .gpt3__header-content__input input {
@@ -47,6 +48,22 @@
   border-radius: 5px 0 0 5px;
   background: var(--color-footer);
   color: #fff;
+}
+
+.gpt3__header-content-input_highlight {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  height: 3px;
+  border-bottom-left-radius: 5px;
+  width: 0;
+  background-color: #ff4820;
+  transition: all 0.3s ease;
+}
+
+.gpt3__header-content__input input:focus + .gpt3__header-content-input_highlight {
+  width: calc(100% - 11px);
+  transition: all 0.2s ease-out;
 }
 
 .gpt3__header-content__input button {

@@ -33,35 +33,96 @@
   align-items: center;
 }
 
+.nav-links {
+  position: relative;
+  margin: 0 1rem;
+  display: inline-block;
+  white-space: pre-line;
+}
+
 .gpt3__navbar-links_container p,
-.gpt3__navbar-sign p,
 .gpt3__navbar-menu_container {
   color: #fff;
   font-family: var(--font-family);
-  font-weight: 500;
   font-size: 18px;
   line-height: 25px;
+  font-weight: 500;
   text-transform: capitalize;
+  white-space: nowrap;
 
-  margin: 0 1rem;
   cursor: pointer;
+}
+
+.gpt3__navbar-menu_container_highlighter-up {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--color-text);
+  transition: all 0.2s ease;
+}
+
+.gpt3__navbar-menu_container_highlighter-down {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--color-text);
+  transition: all 0.2s ease-in;
+}
+
+.gpt3__navbar-links_container:hover a,
+.gpt3__navbar-menu_container-links:hover a {
+  color: #fff;
+  transition: all 0.2s ease-in;
+}
+
+.gpt3__navbar-links_container:hover a:not(:hover),
+.gpt3__navbar-menu_container-links:hover a:not(:hover) {
+  color: #fff;
+  opacity: 0.25;
+  filter: blur(0.7px);
+  transition: all 0.2s ease-in;
+}
+
+.nav-links:hover .gpt3__navbar-menu_container_highlighter-up,
+.nav-links:hover .gpt3__navbar-menu_container_highlighter-down {
+  width: 100%;
+}
+
+.gpt3__navbar-sign p:hover {
+  color: #ff4820;
 }
 
 .gpt3__navbar-sign button,
 .gpt3__navbar-menu_container button {
+  white-space: nowrap;
+  margin-left: 1.5rem;
   padding: 0.5rem 1rem;
   color: #fff;
   background: #ff4820;
   font-family: var(--font-family);
-  font-weight: 500;
+  font-weight: 700;
   font-size: 18px;
-  line-height: 25px;
   left: 1153px;
-  top: 55;
-  border: 0;
+  top: 55px;
   border-radius: 5px;
+  border: none;
   outline: none;
   cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.gpt3__navbar-sign button:hover,
+.gpt3__navbar-menu_container button:hover {
+  transform: translate(0em, -0.05em);
+}
+
+.gpt3__navbar-sign button:active,
+.gpt3__navbar-menu_container button:active {
+  transform: translate(0em, 0.05em);
 }
 
 .gpt3__navbar-menu {
